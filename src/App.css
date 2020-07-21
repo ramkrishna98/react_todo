@@ -16,11 +16,6 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -35,4 +30,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+.createBox{
+    background-color: crimson;
+    width: fit-content;
+    height: fit-content;
+    border: darkorange;
+    padding: 200px 150px;
+    margin: 50px 500px 0;
+    position: absolute;
 }
