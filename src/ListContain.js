@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import './ListContain.css';
+import './ListContain.scss';
+import { FontAwesomeIcon }  from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-export default class ListContain extends Component {
+
+class ListContain extends Component {
 
     constructor(props) {
         super(props);
@@ -22,10 +25,10 @@ export default class ListContain extends Component {
 
         this.setState({ list: newList })
         console.log("007", newList)
-
-        return
     }
-
+    removeItem(index) {
+            
+    }
     render() {
         return (
             <div className='createBox'>
@@ -41,18 +44,20 @@ export default class ListContain extends Component {
                         <button className="buttonBox" type='submit'>Add</button>
                     </form>
                 </div>
-                <div className = "">
-                        {this.state.list.map(nlist => (
-                            <>
-                            <p className="generatedList" key={nlist}>{nlist}</p>
-                            <br/>
-                            </>
-                        ))}
-                        
+                <div>
+                    {this.state.list.map(nlist => (
+                        <p className="generatedList" key={nlist}>{nlist}</p>
+                    ))}
                 </div>
                 <div>
+                <FontAwesomeIcon
+                    className="faicons"
+                    icon={faTrash}
+                    onClick = {this.removeItem}
+                />
                 </div>
             </div>
         )
     }
 }
+export default ListContain;
