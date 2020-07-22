@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ListContain.scss';
-import { FontAwesomeIcon }  from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -27,7 +27,7 @@ class ListContain extends Component {
         console.log("007", newList)
     }
     removeItem() {
-        this.setState({list: []})
+        this.setState({ list: [] })
     }
     render() {
         return (
@@ -46,16 +46,18 @@ class ListContain extends Component {
                 </div>
                 <div>
                     {this.state.list.map(nlist => (
-                        <p className="generatedList" key={nlist}>{nlist}</p>
+                        <p className="generatedList" key={nlist}>{nlist}
+                        
+                            <FontAwesomeIcon
+                                className="faicons"
+                                icon={faTrash}
+                                onClick={() => this.removeItem()}
+                            />
+                        </p>
                     ))}
+
                 </div>
-                <div>
-                <FontAwesomeIcon
-                    className="faicons"
-                    icon={faTrash}
-                    onClick = {() => this.removeItem()}
-                />
-                </div>
+
             </div>
         )
     }
