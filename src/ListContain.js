@@ -26,8 +26,12 @@ class ListContain extends Component {
         this.setState({ list: newList })
         console.log("007", newList)
     }
-    removeItem(index) {
-            
+    removeItem() {
+        const delState = [this.state.list];
+        {delState.filter(delState)}
+
+        
+        this.setState({list: []})
     }
     render() {
         return (
@@ -53,7 +57,7 @@ class ListContain extends Component {
                 <FontAwesomeIcon
                     className="faicons"
                     icon={faTrash}
-                    onClick = {this.removeItem}
+                    onClick = {() => this.removeItem()}
                 />
                 </div>
             </div>
