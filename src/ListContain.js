@@ -27,10 +27,6 @@ class ListContain extends Component {
         console.log("007", newList)
     }
     removeItem() {
-        const delState = [this.state.list];
-        {delState.filter(delState)}
-
-        
         this.setState({list: []})
     }
     render() {
