@@ -26,8 +26,10 @@ class ListContain extends Component {
         this.setState({ list: newList })
         console.log("007", newList)
     }
-    removeItem() {
-        this.setState({ list: [] })
+    removeItem(value) {
+
+        const list = this.state.list.filter(item => item !== value)              
+        this.setState({ list })
     }
     render() {
         return (
@@ -47,11 +49,11 @@ class ListContain extends Component {
                 <div>
                     {this.state.list.map(nlist => (
                         <p className="generatedList" key={nlist}>{nlist}
-                        
+
                             <FontAwesomeIcon
                                 className="faicons"
                                 icon={faTrash}
-                                onClick={() => this.removeItem()}
+                                onClick={() => this.removeItem(nlist)}
                             />
                         </p>
                     ))}
